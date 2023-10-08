@@ -1,9 +1,11 @@
 import random
 
-print("Welcome to Guess the Number!")
-print("I'm thinking of a number between 1 and 20.")
+max_number = random.randint(1, 1000)
 
-number = random.randint(1, 20)
+print("Welcome to Guess the Number!")
+print(f"I'm thinking of a number between 1 and {max_number}.")
+
+number = random.randint(1, max_number)
 
 while True:
     guess = int(input("Your guess: "))
