@@ -1,6 +1,6 @@
 import random
 
-max_number = random.randint(1, 1000)
+max_number = random.randint(1, 99)
 
 print("Welcome to Guess the Number!")
 print(f"I'm thinking of a number between 1 and {max_number}.")
