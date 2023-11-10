@@ -10,12 +10,11 @@ This project covers following topics:
 - Session 2: Variables and Data Types
 - Session 3: Strings and User Input
 - Session 4: Conditional Statements
-- Session 5: Lists and Loops (Part 1)
-- Session 6: Lists and Loops (Part 2)
-- Session 7: Functions (Part 1)
-- Session 8: Functions (Part 2) and Modules
-- Session 9: Dictionaries and Sets
-- Session 10: Recap and Mini-Project
+- Session 5: List Loops and Textures
+- Session 6: Functions
+- Session 7: OOO and Modules
+- Session 8: Dictionary Set and performance
+- Session 9: Recap and Mini-Project
 
 # Folders
 

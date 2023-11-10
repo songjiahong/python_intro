@@ -5,9 +5,10 @@ import sys
 pygame.init()
 WIDTH, HEIGHT = 400, 300
 BALL_RADIUS = 20
+WALL_THICKNESS = 10
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 ball_x = WIDTH // 2
-ball_y = BALL_RADIUS
+ball_y = HEIGHT - WALL_THICKNESS - BALL_RADIUS
 ball_speed_y = 0
 clock = pygame.time.Clock()
 # game loop
@@ -22,14 +23,14 @@ while running:
   # draw the background
   screen.fill((255, 255, 255))
   ball_y += ball_speed_y
-  if ball_y > HEIGHT - BALL_RADIUS:
-    ball_y = HEIGHT - BALL_RADIUS
+  if ball_y > HEIGHT - BALL_RADIUS - WALL_THICKNESS:
+    ball_y = HEIGHT - BALL_RADIUS - WALL_THICKNESS
     ball_speed_y = -ball_speed_y
-  elif ball_y < BALL_RADIUS:
-    ball_y = BALL_RADIUS
+  elif ball_y < BALL_RADIUS + WALL_THICKNESS:
+    ball_y = BALL_RADIUS + WALL_THICKNESS
     ball_speed_y = -ball_speed_y
   # draw the ball
-  pygame.draw.rect(screen, (0,0,0), (0, 0, WIDTH, HEIGHT), 10)
+  pygame.draw.rect(screen, (0,0,0), (0, 0, WIDTH, HEIGHT), WALL_THICKNESS)
   pygame.draw.circle(screen, (255, 0, 0), (ball_x, ball_y), BALL_RADIUS)
   pygame.display.flip()
   clock.tick(60)
