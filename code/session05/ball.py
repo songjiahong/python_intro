@@ -26,8 +26,14 @@ while running:
     elif event.type == pygame.KEYDOWN:
       if event.key == pygame.K_SPACE:
         # Jump when spacebar is pressed
-        ball_speed = 5
-        angle_radians = random.uniform(0, math.pi)
+        if ball_speed == 0:
+          ball_speed = 5
+          angle_radians = random.uniform(0, math.pi)
+        else:
+          ball_speed = 0
+          ball_x = WIDTH // 2
+          ball_y = HEIGHT - BALL_RADIUS
+
   # draw the background
   screen.fill((255, 255, 255))
   # Update ball position
