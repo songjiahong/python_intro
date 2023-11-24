@@ -30,6 +30,14 @@ while running:
     plane_rect.top += speed
     if plane_rect.top > SCREEN_HEIGHT - plane_rect.height:
       plane_rect.top = SCREEN_HEIGHT - plane_rect.height
+  elif key_pressed[pygame.K_LEFT]:
+    plane_rect.left -= speed
+    if plane_rect.left < 0:
+      plane_rect.left = 0
+  elif key_pressed[pygame.K_RIGHT]:
+    plane_rect.left += speed
+    if plane_rect.left > SCREEN_WIDTH - plane_rect.width:
+      plane_rect.left = SCREEN_WIDTH - plane_rect.width
       
   screen.fill(0)
   screen.blit(background, (0,0))

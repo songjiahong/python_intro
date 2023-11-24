@@ -12,8 +12,8 @@ This project covers following topics:
 - Session 4: Conditional Statements
 - Session 5: List Loops and Textures
 - Session 6: Functions
-- Session 7: OOP and Modules
-- Session 8: Dictionary Set and performance
+- Session 7: OOP and Classes
+- Session 8: Modules
 - Session 9: Recap and Mini-Project
 
 # Folders
