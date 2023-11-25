@@ -1,4 +1,5 @@
 from pygame import Rect, sprite, Surface
+from bullet import Bullet
 
 SCREEN_WIDTH = 480
 SCREEN_HEIGHT = 600
@@ -21,6 +22,16 @@ class Player(sprite.Sprite):
     self.rect = Player.PLAYER_RECT[0]
     self.rect.topleft = [200, 400]
     self.speed = 8
+    self.bullets = sprite.Group()
+
+  def shoot(self):
+    bullet = Bullet(self.full_img, self.rect.midtop)
+    self.bullets.add(bullet)
+
+  def move_bullets(self):
+    for bullet in self.bullets:
+      if bullet.move():
+        self.bullets.remove(bullet)
 
   def draw(self, screen, index):
     screen.blit(self.image[index], self.rect)

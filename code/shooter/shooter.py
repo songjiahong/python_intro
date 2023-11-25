@@ -19,10 +19,20 @@ while running:
       running = False
 
   key_pressed = pygame.key.get_pressed()
+  if key_pressed[pygame.K_UP]:
+    player.move_up()
+  elif key_pressed[pygame.K_DOWN]:
+    player.move_down()
   shoot_frequency += 1
   if shoot_frequency >= 15:
     shoot_frequency = 0
+  
+  if shoot_frequency % 15 == 0:
+    player.shoot()
+  
+  player.move_bullets()
   screen.fill(0)
   screen.blit(background, (0,0))
   player.draw(screen, shoot_frequency // 8)
+  player.bullets.draw(screen)
   pygame.display.update()
