@@ -21,3 +21,6 @@ class ElectricCar(Car):
   def describe_car(self):
     description = super().describe_car()
     return f"{description} (Electric)"
+
+elec_car = ElectricCar('Tesla', 'ModelX', '2020')
+print(elec_car.describe_car()) 
