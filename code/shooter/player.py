@@ -19,7 +19,7 @@ class Player(sprite.Sprite):
     self.image = []
     for i in range(len(Player.PLAYER_RECT)):
       self.image.append(full_img.subsurface(Player.PLAYER_RECT[i]).convert_alpha())
-    self.rect = Player.PLAYER_RECT[0]
+    self.rect = Rect(Player.PLAYER_RECT[0])
     self.rect.topleft = [200, 400]
     self.speed = 8
     self.bullets = sprite.Group()
@@ -45,3 +45,13 @@ class Player(sprite.Sprite):
     self.rect.top += self.speed
     if self.rect.top > SCREEN_HEIGHT - self.rect.height:
       self.rect.top = SCREEN_HEIGHT - self.rect.height
+
+  def move_left(self):
+    self.rect.left -= self.speed
+    if self.rect.left < 0:
+      self.rect.left = 0
+  
+  def move_right(self):
+    self.rect.left += self.speed
+    if self.rect.left > SCREEN_WIDTH - self.rect.width:
+      self.rect.left = SCREEN_WIDTH - self.rect.width

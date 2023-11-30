@@ -1,7 +1,7 @@
 import pygame
-from player import Player, SCREEN_WIDTH, SCREEN_HEIGHT
-
 pygame.init()
+
+from player import Player, SCREEN_WIDTH, SCREEN_HEIGHT
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Air shooter')
@@ -23,6 +23,11 @@ while running:
     player.move_up()
   elif key_pressed[pygame.K_DOWN]:
     player.move_down()
+  elif key_pressed[pygame.K_LEFT]:
+    player.move_left()
+  elif key_pressed[pygame.K_RIGHT]:
+    player.move_right()
+  
   shoot_frequency += 1
   if shoot_frequency >= 15:
     shoot_frequency = 0
