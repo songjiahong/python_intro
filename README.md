@@ -13,7 +13,7 @@ This project covers following topics:
 - Session 5: List Loops and Textures
 - Session 6: Functions
 - Session 7: OOP and Classes
-- Session 8: Modules
+- Session 8: Modules and performance
 - Session 9: Recap and Mini-Project
 
 # Folders
