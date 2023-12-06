@@ -1,8 +1,6 @@
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from pygame import Rect, sprite, Surface
 from bullet import Bullet
-
-SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 600
 
 class Player(sprite.Sprite):
   PLAYER_RECT = []
@@ -23,6 +21,7 @@ class Player(sprite.Sprite):
     self.rect.topleft = [200, 400]
     self.speed = 8
     self.bullets = sprite.Group()
+    self.down_index = 16
 
   def shoot(self):
     bullet = Bullet(self.full_img, self.rect.midtop)
@@ -55,3 +54,8 @@ class Player(sprite.Sprite):
     self.rect.left += self.speed
     if self.rect.left > SCREEN_WIDTH - self.rect.width:
       self.rect.left = SCREEN_WIDTH - self.rect.width
+
+  def draw_down(self, screen):
+    screen.blit(self.image[self.down_index // 8], self.rect)
+    self.down_index += 1
+    return self.down_index > 47
